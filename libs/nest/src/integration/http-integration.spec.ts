@@ -40,7 +40,6 @@ describe('HTTP Integration Tests', () => {
         imports: [
           BetterAuthModule.forRoot({
             betterAuthConfig: {
-              baseURL: 'http://test-server',
               emailAndPassword: {
                 enabled: true,
               },
