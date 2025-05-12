@@ -1,3 +1,13 @@
+## 0.5.5-0 (2025-05-12)
+
+### 🩹 Fixes
+
+- missing CurrentUserSession export ([2f95193](https://github.com/underfisk/nestjs-better-auth/commit/2f95193))
+
+### ❤️ Thank You
+
+- Rodrigo
+
 ## 0.5.4-0 (2025-05-12)
 
 ### 🚀 Features
