@@ -6,6 +6,15 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "description": "A better-auth module for NestJS",
+  "keywords": [
+    "better-auth",
+    "nestjs",
+    "auth",
+    "authentication",
+    "authorization",
+    "jwt"
+  ],
+  "license": "MIT",
   "author": {
     "name": "Underfisk",
     "url": "https://github.com/underfisk"
