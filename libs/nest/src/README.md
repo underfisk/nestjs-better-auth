@@ -124,6 +124,10 @@ class AppModule {}
 
 We're maintaining **CommonJS** compatibility as many existing applications still use CJS. While we plan to transition to ESM in the future, this approach ensures broader compatibility for now.
 
+### HOOKS
+
+WIP
+
 ### Contributing
 
 We welcome contributions to improve nestjs-better-auth! Here's how you can help:
