@@ -5,6 +5,7 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "description": "A better-auth module for NestJS",
   "exports": {
     "./package.json": "./package.json",
     ".": {
