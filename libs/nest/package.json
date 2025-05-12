@@ -1,6 +1,6 @@
 {
-  "name": "@underfisk/nestjs-better-auth",
-  "version": "0.2.0-0",
+  "name": "nestjs-better-auth",
+  "version": "0.2.0",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -26,5 +26,8 @@
     "@nestjs/common": "^11.1.0",
     "@nestjs/core": "^11.1.0",
     "better-auth": "^1.2.7"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
