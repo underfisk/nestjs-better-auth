@@ -23,7 +23,6 @@ export const CurrentUserSession = createParamDecorator(
   ): BetterAuthUserSession => {
     const request = ctx.switchToHttp().getRequest();
 
-    // TODO: accept more context ype
     const session = request[REQ_SESSION_KEY];
     if (!session) {
       throw new Error('Session not found in request');
