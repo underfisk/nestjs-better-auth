@@ -31,7 +31,7 @@
     "nx": "21.0.3",
     "pactum": "^3.7.6",
     "prettier": "^3.5.3",
-    "tslib": "^2.3.0",
+    "tslib": "^2.8.1",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.32.1",
     "verdaccio": "^6.0.5",
