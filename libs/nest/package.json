@@ -1,7 +1,7 @@
 {
   "name": "nestjs-better-auth",
   "version": "0.5.6-0",
-  "type": "module",
+  "type": "commonjs",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
