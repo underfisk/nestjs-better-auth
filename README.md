@@ -128,6 +128,27 @@ We're maintaining **CommonJS** compatibility as many existing applications still
 
 WIP
 
+### Read authenticated user
+
+You can read the authenticated/current user session using `@CurrentUserSession` decorator.
+By default, it will return the user and session but it accepts a parameter `user` or `session`, examples below
+
+```typescript
+import { CurrentUserSession, BetterAuthUserSession } from 'nestjs-better-auth';
+import { Controller } from '@nestjs/common';
+
+class Controller {
+  @Get('me')
+  getMe(
+    @CurrentUserSession() userAndSession: BetterAuthUserSession,
+    @CurrentUserSession('user') user: BetterAuthUserSession['user'],
+    @CurrentUserSession('session') session: BetterAuthUserSession['session'],
+  ) {
+    // your logic
+  }
+}
+```
+
 ### Contributing
 
 We welcome contributions to improve nestjs-better-auth! Here's how you can help:

@@ -7,3 +7,4 @@ export {
 } from './lib/better-auth-decorators';
 export * from './lib/types';
 export * from './lib/better-auth.guard';
+export * from './lib/better-auth-decorators';
