@@ -1,3 +1,13 @@
+## 0.5.4-0 (2025-05-12)
+
+### 🚀 Features
+
+- export decorators and update docs ([0be77a3](https://github.com/underfisk/nestjs-better-auth/commit/0be77a3))
+
+### ❤️ Thank You
+
+- Rodrigo
+
 ## 0.5.3-0 (2025-05-12)
 
 This was a version bump only, there were no code changes.
