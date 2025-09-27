@@ -15,7 +15,6 @@ pnpm i nestjs-better-auth
 This module supports two HTTP adapters out of the box:
 
 - **Express v5**
-
   - [Better Auth Integration guide for Express](https://www.better-auth.com/docs/integrations/express)
   - Default adapter for NestJS applications
 
@@ -24,6 +23,10 @@ This module supports two HTTP adapters out of the box:
   - Higher performance alternative
 
 Please refer to the respective integration guides for detailed setup instructions.
+
+### GraphQL Support
+
+This library supports GraphQL context out of the box.
 
 #### Consuming `BetterAuthModule`
 
