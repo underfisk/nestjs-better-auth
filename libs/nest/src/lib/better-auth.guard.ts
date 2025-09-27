@@ -27,7 +27,7 @@ export class BetterAuthGuard implements CanActivate {
    * Validates HTTP request and checks if the user is authenticated.
    * If the request is authenticated, it will add the session to the request object.
    * If the request is not authenticated, it will throw an UnauthorizedException.
-   * **Note** Non-HTTP contexts are not supported such as WebSocket or GraphQL.
+   * Supports both HTTP and GraphQL
    *
    * @param context
    * @returns
@@ -45,16 +45,19 @@ export class BetterAuthGuard implements CanActivate {
     const request = getRequestFromContext(context);
 
     const session = await this.auth.api.getSession({
-      headers: fromNodeHeaders(request?.headers),
+      headers: fromNodeHeaders(
+        request.headers || request?.handshake?.headers || [],
+      ),
     });
 
     // Decorate the request with the session and user information
     // As we'll be able to access in the decorators
-    (request as any)[REQ_SESSION_KEY] = session;
+    request[REQ_SESSION_KEY] = session;
 
     if (!session) {
       throw new UnauthorizedException({
         code: 'UNAUTHORIZED',
+        message: 'Unauthorized',
       });
     }
 
