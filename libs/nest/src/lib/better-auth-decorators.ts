@@ -9,6 +9,7 @@ import {
 } from './constants';
 import { BetterAuthUserSession } from './types';
 import { BETTER_AUTH_MODULE_OPTIONS_CONFIG_KEY } from './better-auth-config.module';
+import { getRequestFromContext } from './getRequestFromContext';
 
 export const InjectBetterAuth = () => Inject(BETTER_AUTH_INSTANCE_TOKEN);
 export const InjectBetterAuthModuleOptions = () =>
@@ -21,7 +22,7 @@ export const CurrentUserSession = createParamDecorator(
     sessionAccessKey: UserSessionType | undefined,
     ctx: ExecutionContext,
   ): BetterAuthUserSession => {
-    const request = ctx.switchToHttp().getRequest();
+    const request = getRequestFromContext(ctx);
 
     const session = request[REQ_SESSION_KEY];
     if (!session) {

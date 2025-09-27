@@ -25,6 +25,10 @@ This module supports two HTTP adapters out of the box:
 
 Please refer to the respective integration guides for detailed setup instructions.
 
+### GraphQL Support
+
+This library supports GraphQL context out of the box.
+
 #### Consuming `BetterAuthModule`
 
 Simply register the module in your `AppModule` (or your feature)

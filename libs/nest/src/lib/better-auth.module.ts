@@ -58,7 +58,6 @@ export class BetterAuthModule
   }
 
   onModuleInit() {
-    // TODO: review the hooks setup
     if (!this.auth.options.hooks) return;
 
     const providers = this.discoveryService
@@ -67,6 +66,7 @@ export class BetterAuthModule
         ({ metatype }) => metatype && Reflect.getMetadata(HOOK_KEY, metatype),
       );
 
+    this.logger.log(`Found ${providers.length} providers with hooks`);
     for (const provider of providers) {
       const providerPrototype = Object.getPrototypeOf(provider.instance);
       const methods = this.metadataScanner.getAllMethodNames(providerPrototype);
@@ -76,10 +76,14 @@ export class BetterAuthModule
         this.setupHooks(providerMethod);
       }
     }
+
+    this.logger.log('Module initialization complete.');
   }
 
   private setupHooks(providerMethod: (ctx: any) => Promise<void>) {
     if (!this.auth.options.hooks) return;
+
+    this.logger.log(`Setting up hooks for method ${providerMethod.name}`);
 
     for (const { metadataKey, hookType } of HOOKS) {
       const hookPath = Reflect.getMetadata(metadataKey, providerMethod);
@@ -87,11 +91,17 @@ export class BetterAuthModule
 
       const originalHook = this.auth.options.hooks[hookType];
       this.auth.options.hooks[hookType] = createAuthMiddleware(async (ctx) => {
+        this.logger.log(`Received ${hookType} hook call for path ${ctx.path}`);
+
         if (originalHook) {
+          this.logger.debug(
+            `Executing original ${hookType} hook for path ${ctx.path}`,
+          );
           await originalHook(ctx);
         }
 
         if (hookPath === ctx.path) {
+          this.logger.log(`Executing ${hookType} hook for path ${ctx.path}`);
           await providerMethod(ctx);
         }
       });

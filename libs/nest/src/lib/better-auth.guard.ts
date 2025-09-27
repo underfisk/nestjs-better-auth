@@ -10,6 +10,7 @@ import {
 } from './better-auth-decorators';
 import { BetterAuthModuleOptions } from './types';
 import { REQ_SESSION_KEY } from './constants';
+import { getRequestFromContext } from './getRequestFromContext';
 
 @Injectable()
 export class BetterAuthGuard implements CanActivate {
@@ -41,7 +42,7 @@ export class BetterAuthGuard implements CanActivate {
       if (shouldSkip) return true;
     }
 
-    const request = context.switchToHttp().getRequest();
+    const request = getRequestFromContext(context);
 
     const session = await this.auth.api.getSession({
       headers: fromNodeHeaders(request?.headers),
