@@ -1,3 +1,17 @@
+## 0.6.4 (2025-09-27)
+
+### 🚀 Features
+
+- export decorators and update docs ([0be77a3](https://github.com/underfisk/nestjs-better-auth/commit/0be77a3))
+
+### 🩹 Fixes
+
+- missing CurrentUserSession export ([2f95193](https://github.com/underfisk/nestjs-better-auth/commit/2f95193))
+
+### ❤️ Thank You
+
+- Rodrigo
+
 ## 0.6.0 (2025-06-30)
 
 This was a version bump only, there were no code changes.
