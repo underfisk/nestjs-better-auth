@@ -7,7 +7,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@nestjs/common": "^11.1.17",
-    "@nestjs/core": "^11.1.17",
+    "@nestjs/core": "^11.1.18",
     "@nestjs/graphql": "^13.2.4",
     "@nestjs/platform-express": "^11.1.17",
     "@nestjs/platform-fastify": "^11.1.17",
