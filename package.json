@@ -23,7 +23,7 @@
     "@types/node": "25.5.0",
     "@vitest/coverage-v8": "^4.1.0",
     "@vitest/ui": "^4.1.0",
-    "better-auth": "^1.5.5",
+    "better-auth": "^1.6.2",
     "eslint": "^10.0.3",
     "eslint-config-prettier": "^10.1.8",
     "fastify": "link:@nestjs/platform/fastify",
