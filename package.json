@@ -10,7 +10,7 @@
     "@nestjs/core": "^11.1.17",
     "@nestjs/graphql": "^13.2.4",
     "@nestjs/platform-express": "^11.1.17",
-    "@nestjs/platform-fastify": "^11.1.17",
+    "@nestjs/platform-fastify": "^11.1.24",
     "@nestjs/testing": "^11.1.17",
     "@nx/eslint": "22.5.4",
     "@nx/eslint-plugin": "22.5.4",
